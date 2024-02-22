@@ -1,0 +1,54 @@
+body{
+    background-image: url(../img/golf.JPG);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 800px;
+   
+}
+
+#nameBox{
+    border: 1px solid white;
+    height: 32px;
+    width: 300px;
+    background-color: dodgerblue;
+    text-align: center;
+    margin-left: 75px;
+    margin-top: 150px;
+    padding-bottom: 13px;
+    
+    
+
+}
+
+#JT{
+    padding-bottom: 1px;
+}
+
+
+
+#shotBox{
+    border: 1px solid white;
+    height: 32px;
+    width: 40px;
+    text-align: center;
+    position: relative; left: 259px; bottom: 52px;
+    background-color: lightskyblue;
+    padding-bottom: 13px;
+
+}
+
+#bottomBox{
+    border: 1px solid white;
+    background-color: dodgerblue;
+    height: 32px;
+    width: 300px;
+    position: relative; bottom:53px; right: 1px;
+    padding-bottom: 13px;
+   
+}
+
+p {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
