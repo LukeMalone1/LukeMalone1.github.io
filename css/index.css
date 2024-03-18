@@ -12,11 +12,13 @@ h1{
  h2{
   text-align: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 5;
  }
 
  h3{
   text-align: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 5%;
  }
 
  div{
@@ -31,14 +33,21 @@ h1{
  p{
   font-family: sans-serif;
  }
+
+ ul{
+  list-style-type: none;
+ }
   
-  .title {
+  #title {
     font-size: 200%;
     align-content: center;
-    padding: 50px 20px;
+    padding: 5%;
     margin: 0 auto;
     max-width: 980px;
     
+  }
+  #title:hover{
+    background-color: #fff;
   }
   
   .grid {
@@ -58,6 +67,10 @@ h1{
     position: sticky;
     top: 0;
     
+  }
+   
+  nav:hover{
+    background-color: palegreen;
   }
   
   nav ul {
