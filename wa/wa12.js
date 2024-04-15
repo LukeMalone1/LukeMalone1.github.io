@@ -1,36 +1,54 @@
-const btn = document.querySelector("#js-new-pic");
-btn.addEventListener('click', getPic);
+const btnNewPic = document.querySelector("#js-new-pic");
+const btnNewFact = document.querySelector("#js-new-fact");
+const imageContainer = document.getElementById('image-container');
+const factContainer = document.getElementById('fact-container');
 
-
-const image = document.createElement("img");
-const body = document.querySelector(".app");
-body.appendChild(image);
-
-let answer = '';
+btnNewPic.addEventListener('click', getPic);
+btnNewFact.addEventListener('click', getFact);
 
 async function getPic() {
-    
     try {
-        const response = await fetch("https://random.dog/woof.json");
-        // if (!response.ok) {
-        //     throw Error(response.statusText)
-        // }
+        const response = await fetch("https://dog.ceo/api/breeds/image/random");
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
 
         const jsonData = await response.json();
-        image.src = jsonData;
-        image.alt = "alt text"
-        console.log(jsonData);
-        image.src=jsonData["url"];
-        
-        
-       
+        const imageUrl = jsonData.message;
+
+        const image = document.createElement("img");
+        image.src = imageUrl;
+        image.alt = "Doggo";
+
+        image.width = 300; 
+        image.height = 300; 
+
+        imageContainer.innerHTML = '';
+
+        imageContainer.appendChild(image);
     } catch (err) {
         console.log(err);
-        alert ('Failed to fetch new quote');
+        alert('Failed to fetch new image');
+    }
+}
+
+async function getFact() {
+    try {
+        const response = await fetch("https://dog-facts-api.herokuapp.com/api/v1/resources/dogs?number=1");
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+
+        const factData = await response.json();
+
+        const randomIndex = Math.floor(Math.random() * factData.length);
+        const randomFact = factData[randomIndex].fact;
+
+        factContainer.textContent = randomFact;
+    } catch (err) {
+        console.log(err);
+        alert('Failed to fetch dog fact');
     }
 }
 
 
-
-
-getPic();
