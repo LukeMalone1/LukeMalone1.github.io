@@ -3,8 +3,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const volumeDisplay = document.getElementById("volume-display");
   const container = document.getElementById("container");
-
-
+  
 
   function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -49,5 +48,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  setInterval(moveCircles, 6000);
+  setInterval(moveCircles, 2000);
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const volumeDisplay = document.getElementById("volume-display");
+  const submitBtn = document.getElementById("submit");
+
+ 
+  submitBtn.addEventListener("click", function () {
+    const volume = volumeDisplay.textContent.split(": ")[1];
+    alert("Volume is " + volume);
+  });
 });
